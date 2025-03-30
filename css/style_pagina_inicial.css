@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2? family= Noto+Sans:ital,wght@0,800;1,400 & family= Roboto:wght@400;700 & display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    height: 3800px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.content {
+    height: 250px;
+    width: 85%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.navegation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.bar {
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    margin: 6px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.bar:hover {
+    background: rgb(212, 212, 212);
+}
+
+#slide1:checked ~ .navegation #bar1 {
+    background-color: white;
+}
+
+#slide2:checked ~ .navegation #bar2 {
+    background-color: white;
+}
+
+#slide3:checked ~ .navegation #bar3 {
+    background-color: white;
+}
+
+#slide4:checked ~ .navegation #bar4 {
+    background-color: white;
+}
+
+#slide5:checked ~ .navegation #bar5 {
+    background-color: white;
+}
+
+.input1 {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+
+.slide {
+    width: 20%;
+    transition: 0.6s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#slide1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#slide2:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#slide3:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#slide4:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#slide5:checked ~ .s1 {
+    margin-left: -80%;
+}
+
+.icones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 400px;
+}
+
+.circulos {
+    width: 80px;
+    height: 80px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.circulos:hover {
+    background: #c0c0c0;
+}
+
+.img-icons {
+    width: 40px;
+    position: absolute;
+    margin-right: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-icons {
+    margin-top: 90px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.titulo-anuncios {
+    font-size: 24px;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+.titulo-anuncio-patrocinados {
+    font-size: 24px;
+    position: relative;
+    margin-top: 250px;
+    margin-bottom: -110px;
+    margin-left: 30px;
+}
+
+.conteudo {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.conteudo-anuncio {
+    flex: 0 0 15%;
+    padding: 5px;
+    border: 1px solid #949494;
+    background: #fff;
+    margin-top: 130px;
+    margin-right: 35px;
+    margin-bottom: 200px;
+    margin-left: 35px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    transition: transform 0.6s;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.conteudo-anuncio:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 4px rgb(134, 134, 134);
+}
+
+.img-anuncios {
+    width: 100%;
+}
+
+.scroll-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 98.5%;
+    margin-left: 15px;
+    margin-top: -400px;
+    position: relative;
+    z-index: 2;
+}
+
+.scroll-button {
+    background: #ffffff;
+    border-radius: 50%;
+    border: 1px solid rgb(238, 238, 238);
+    box-shadow: 0px 1px 2px black;
+    font-size: 30px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.scroll-button:hover {
+    transform: scale(1.1);
+}
+
+.preço {
+    font-size: 16px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.paragrafos {
+    margin-top: 120px;
+    overflow: hidden;
+    font-size: 14px;
+    white-space: break-spaces;
+    position: relative;
+}
+
+.rodape {
+    margin: 300px 0 0;
+    padding: 92px 24px 0;
+    background-color: black;
+    color: aliceblue;
+    border-top: 4px solid white;
+}
+
+.rodape .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    border-bottom: 2px solid white;
+}
+
+.rodape .container .coluna {
+    flex: 1 1 350px;
+}
+
+.rodape h2 {
+    margin-bottom: 32px;
+    padding-left: 8px;
+    border-left: 4px solid white;
+}
+
+.rodape p {
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.rodape .container .coluna img {
+    width: 50%;
+    margin-left: 200px;
+    cursor: pointer;
+}
+
+.rodape .container .coluna img:hover {
+    transform: scale(1.05);
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.a-1:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1280px) {
+    .c1 {
+        padding: 6px;
+    }
+
+    .c1 p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .c6 {
+        padding: 14px;
+    }
+
+    .c7 {
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .conteudo {
+        overflow-y: hidden;
+        overflow-x: auto;
+        margin-bottom: -350px;
+    }
+
+    .conteudo-anuncio {
+        flex: 0 0 35%;
+    }
+
+    .scroll-buttons {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icones {
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 50px;
+        margin-top: 280px;
+        margin-left: -30px;
+        margin-right: -70px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        width: 100%;
+        height: 30%;
+        margin-top: -10px;
+    }
+
+    .navegation {
+        display: none;
+    }
+
+    .icones {
+        margin-top: 280px;
+        max-width: 100%;
+        margin-left: 20px;
+    }
+
+    .circulos {
+       margin-left: 35px;
+       margin-right: -50px;
+        
+    }
+
+    .circulos p{
+        margin-top: 75px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .c1{
+        margin-left: 450px;
+    }
+
+    .c2{
+        margin-right: 1px;
+        margin-left: 80px;
+    }
+
+    .c3{
+        margin-right: 10px;
+    }
+
+    .c4, .c5, .c6, .c7{
+        margin-right: 10px;
+    }
+
+    .conteudo-anuncio {
+        flex: 0 0 55%;
+    }
+}

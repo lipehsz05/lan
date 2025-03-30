@@ -1,0 +1,683 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/* 
+    Menu:
+    CSS do Menu de Navegação 
+    CSS do Feedback Wrapper
+    CSS do Cabeçalho do Site
+    CSS da Sessão de Produtos/Planos do Site
+    CSS dos Cards/Planos
+    CSS do Acesso Gratuito
+    CSS do Rodapé da Página
+    CSS Notebook
+    CSS Mobile
+*/
+
+:root {
+    --primaria: #4d5ce3;
+    --secundaria: #de8d2d;
+    --prata: #b7b7b7;
+    --ouro: #ffaf40;
+    --diamante: #8cc9db;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* CSS do Menu de Navegação */
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+
+nav #menuButton {
+    display: none;
+}
+
+nav .logo-container {
+    margin: 20px 0 0 26px;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+    padding-right: min(76px, 10%);
+    height: 100%;
+    gap: 16px;
+}
+
+nav .menu a,
+nav .menu a:visited {
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--primaria);
+    z-index: 2;
+    transition: all ease 100ms;
+}
+
+nav .menu .bg-azul,
+nav .menu .bg-azul:visited {
+    background-color: var(--primaria);
+    color: #fff;
+    padding: 8px 20px;
+    border: 2px solid var(--primaria);
+    border-radius: 8px;
+}
+
+nav .menu a:hover,
+nav .menu a:visited:hover {
+    color: var(--secundaria);
+    background-color: #fff;
+}
+
+/* CSS do Feedback Wrapper */
+
+.wrapper {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    max-width: 400px;
+    width: 80%;
+    border-radius: 0.75rem;
+    box-shadow: 0px 1px 20px black;
+    text-align: center;
+    display: block;
+    transition: top ease 200ms;
+    z-index: 2;
+}
+
+.wrapper h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.avaliar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 0.5rem;
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 5px #000;
+    color: yellow;
+    margin-bottom: 2rem;
+}
+
+.avaliar .star {
+    cursor: pointer;
+}
+
+.avaliar .star.active {
+    opacity: 0;
+    animation: animate 0.5s ease-in-out forwards;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.avaliar .star:hover {
+    transform: scale(1.1);
+}
+
+textarea {
+    width: 100%;
+    background: rgb(216, 216, 216);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    resize: none;
+    margin-bottom: 0.5rem;
+}
+
+.btn-group {
+    display: flex;
+    grid-gap: 0.5rem;
+    align-items: center;
+}
+
+.btn-group .btn {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.btn-group .btn.enviar {
+    background: rgb(0, 132, 255);
+    color: white;
+}
+
+.btn-group .btn.enviar:hover {
+    background: rgb(0, 117, 226);
+}
+
+.btn-group .btn.cancelar {
+    background: rgb(221, 221, 221);
+    color: rgb(0, 132, 255);
+}
+
+.btn-group .btn.cancelar:hover {
+    background: rgb(179, 179, 179);
+}
+
+/* CSS do Cabeçalho do Site */
+
+header {
+    width: 100%;
+    position: relative;
+    height: 82vh;
+    background-image: url(../images_planos/construtor.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+header::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 90%, #aaa 100%);
+}
+
+header h1 {
+    font-size: 36pt;
+    margin: 20px 0 0 10%;
+    width: fit-content;
+    padding: 16px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.5);
+    -webkit-text-stroke-width: 0.5px;
+}
+
+header p {
+    font-size: 14pt;
+    font-weight: 500;
+    width: min(60%, 800px);
+    margin: 12px 0 0 10%;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.5);
+    -webkit-text-stroke-width: 0.5px;
+}
+
+header h1 .titulo-destacado,
+header p .texto-destacado {
+    color: var(--primaria);
+}
+
+/* CSS da Sessão de Produtos/Planos do Site */
+
+#produtos-container h2 {
+    margin: 10px;
+    margin-top: 54px;
+    font-size: 26pt;
+    text-align: center;
+}
+
+#produtos-container h3 {
+    text-align: center;
+    margin: 0 20px 50px 20px;
+}
+
+#produtos-container h2 .titulo-destacado,
+#produtos-container h3 .titulo-destacado {
+    color: var(--secundaria);
+}
+
+/* CSS dos Cards/Planos */
+
+.planos-wrapper * {
+    font-family: "Poppins", sans-serif;
+}
+
+.planos-wrapper {
+    max-width: 1090px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.planos-wrapper .tabela {
+    background-color: #fff;
+    width: calc(33% - 20px);
+    padding: 30px;
+}
+
+.planos-wrapper .tabela .preco-section {
+    display: flex;
+    justify-content: center;
+}
+
+.preco-section .preco-area {
+    width: 180px;
+    aspect-ratio: 1;
+    background-color: var(--secundaria);
+    border-radius: 50%;
+    padding: 2px;
+    user-select: none;
+}
+
+.preco-area .area-interna {
+    height: 100%;
+    width: 100%;
+    background-color: var(--secundaria);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    color: #fff;
+    line-height: 177px;
+    text-align: center;
+    position: relative;
+}
+
+.preco-area .area-interna .texto {
+    font-size: 25px;
+    font-weight: 400;
+    position: absolute;
+    top: -30px;
+    left: 20px;
+}
+
+.preco-area .area-interna .preco {
+    font-size: 45px;
+    font-weight: 500;
+    margin-left: 18px;
+}
+
+.tabela .nome-do-pacote {
+    width: 100%;
+    height: 2px;
+    background-color: var(--secundaria);
+    margin: 35px 0;
+    position: relative;
+}
+
+.tabela .nome-do-pacote::before {
+    position: absolute;
+    content: "Basic";
+    left: 50%;
+    top: 50%;
+    background-color: #fff;
+    font-size: 35px;
+    font-weight: 500;
+    padding: 0 15px;
+    transform: translate(-50%, -50%);
+}
+
+.tabela .beneficios li {
+    margin-bottom: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.beneficios li .nome-da-lista {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.beneficios li .icone {
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.beneficios li .icone.check {
+    color: #2db94d;
+}
+
+.beneficios li .icone.cross {
+    color: #cd3241;
+}
+
+.tabela .botao {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+.tabela .botao button {
+    width: 80%;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background-color: var(--secundaria);
+    border-radius: 25px;
+    user-select: none;
+    cursor: pointer;
+    transition: all ease-in 100ms;
+}
+
+.prata ::selection,
+.prata .preco-area,
+.prata .area-interna,
+.prata .nome-do-pacote {
+    background-color: var(--prata);
+}
+
+.prata .botao button {
+    background-color: #fff;
+    color: var(--prata);
+    border: 2px solid var(--prata);
+}
+
+.prata .botao button:hover {
+    background-color: var(--prata);
+    color: #fff;
+}
+
+.prata .nome-do-pacote::before {
+    content: "Prata";
+}
+
+.ouro ::selection,
+.ouro .preco-area,
+.ouro .area-interna,
+.ouro .nome-do-pacote {
+    background-color: var(--ouro);
+}
+
+.ouro .botao button {
+    background-color: #fff;
+    color: var(--ouro);
+    border: 2px solid var(--ouro);
+}
+
+.ouro .botao button:hover {
+    background-color: var(--ouro);
+    color: #fff;
+}
+
+.ouro .nome-do-pacote::before {
+    content: "Ouro";
+}
+
+.diamante ::selection,
+.diamante .preco-area,
+.diamante .area-interna,
+.diamante .nome-do-pacote {
+    background-color: var(--diamante);
+}
+
+.diamante .botao button {
+    background-color: #fff;
+    color: var(--diamante);
+    border: 2px solid var(--diamante);
+}
+
+.diamante .botao button:hover {
+    background-color: var(--diamante);
+    color: #fff;
+}
+
+.diamante .nome-do-pacote::before {
+    content: "Diamante";
+}
+
+/* CSS do Acesso Gratuito */
+
+#produtos-container .acesso-gratuito-wrapper {
+    margin-top: 60px;
+}
+
+#produtos-container .acesso-gratuito-wrapper h3 {
+    font-size: 18pt;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#produtos-container .acesso-gratuito-wrapper h3 .titulo-destacado {
+    color: var(--primaria);
+}
+
+.sublinhado{
+    text-decoration: none;
+}
+
+.acesso-gratuito-botao {
+    display: block;
+    margin: auto;
+    width: 160px;
+    height: 40px;
+    background-color: var(--primaria);
+    border: 2px solid var(--primaria);
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    font-size: 12pt;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    transition: all ease 100ms;
+    cursor: pointer;
+    margin-bottom: 60px;
+}
+
+.acesso-gratuito-botao:hover {
+    background-color: #fff;
+    color: var(--primaria);
+}
+
+/* CSS do Rodapé da Página */
+
+footer {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    padding: 50px 12px;
+    min-height: 50vh;
+    border-top: 5px solid var(--primaria);
+}
+
+footer .colunas-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-evenly;
+    font-size: 14pt;
+}
+
+footer h2 {
+    border-left: 5px solid var(--primaria);
+    padding: 5px;
+    margin: 18px 0;
+}
+
+.colunas-container .coluna {
+    min-width: 280px;
+    max-width: calc(100vw / 3);
+}
+
+.coluna .contatos {
+    list-style: none;
+}
+
+.contatos li {
+    margin-top: 3px;
+}
+
+.contatos .link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.contatos .link:visited {
+    color: #fff;
+}
+
+.copyright-container {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.copyright-container span {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    padding: 14px;
+    text-align: center;
+    border-top: 2px solid var(--primaria);
+}
+
+/* CSS Notebook */
+
+@media (max-width: 1020px) {
+    .planos-wrapper .tabela {
+        width: calc(50% - 20px);
+        margin-bottom: 40px;
+    }
+}
+
+/* CSS Mobile */
+
+@media (max-width: 698px) {
+    nav {
+        z-index: 4;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    nav #menuButton {
+        display: block;
+        background-color: #ffffff88;
+        border-radius: 10px;
+        border: 1px solid #00000011;
+        color: #222;
+        cursor: pointer;
+        font-size: 36pt;
+        margin-right: 16px;
+        z-index: 3;
+    }
+
+    nav .logo-container {
+        z-index: 4;
+        margin: 16px 0 0 16px;
+    }
+
+    nav .logo-container img {
+        width: 80px;
+        height: 80px;
+    }
+
+    nav .menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        top: 0;
+        right: -100%;
+        padding: 110px 0 0 0;
+        margin: 0;
+        gap: 0;
+        z-index: 2;
+        transition: right ease 200ms;
+    }
+
+    nav .menu a,
+    nav .menu a:visited,
+    nav .menu .bg-azul,
+    nav .menu .bg-azul:visited {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        height: 80px;
+        width: 100%;
+        color: var(--primaria);
+        background-color: transparent;
+        font-size: 16pt;
+        padding: 0;
+        border-radius: 0;
+        border: none;
+    }
+
+    header {
+        overflow: hidden;
+        background-image: none;
+        padding-top: 110px;
+    }
+
+    header::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            103deg,
+            var(--primaria) 60%,
+            var(--secundaria) 60%
+        );
+        clip-path: polygon(
+            35% 100%,
+            60% 0%,
+            70% 0%,
+            45% 100%,
+            55% 100%,
+            80% 0%,
+            90% 0%,
+            65% 100%
+        );
+        z-index: -1;
+    }
+
+    .planos-wrapper .tabela {
+        width: 100%;
+    }
+}
+
+@media (max-width: 470px) {
+    header::before {
+        background: linear-gradient(
+            97deg,
+            var(--primaria) 60%,
+            var(--secundaria) 60%
+        );
+    }
+}

@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500&family=Poppins:wght@400;500&display=swap");
+
+/* 
+    Menu:
+    CSS do Menu de Navegação 
+    CSS do Conteúdo Principal
+    CSS da Caixa de Navegação
+    CSS dos Anúncios
+*/
+
+:root {
+    --primaria: #4d5ce3;
+    --secundaria: #de8d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* CSS do Conteúdo Principal */
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    gap: 16px;
+}
+
+/* CSS da Caixa de Navegação */
+
+.navbox {
+    position: sticky;
+    top: 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 3;
+}
+
+.navbox h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11pt;
+    font-weight: 550;
+    background-color: #f6f6f6;
+    padding: 8px;
+}
+
+.navbox .categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 8px;
+    gap: 8px;
+}
+
+.navbox .categorias .categoria {
+    width: 90px;
+    height: 70px;
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.categorias .categoria .img-icons {
+    width: 28px;
+}
+
+.categorias .categoria span {
+    text-align: center;
+    line-height: 14px;
+    font-size: 9pt;
+    color: #000;
+}
+
+.navbox .categorias .categoria:hover {
+    background-color: #f6f6f6;
+    text-decoration: underline;
+}
+
+/* CSS dos Anúncios */
+
+.anuncios {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: min(100%, max(564px, 60%));
+    list-style: none;
+}
+
+.anuncios .anuncio {
+    width: 100%;
+    height: 256px;
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow ease 100ms;
+}
+
+.anuncios .anuncio:hover {
+    box-shadow: 0px 6px 12px #ddd;
+}
+
+.anuncios .anuncio a {
+    width: 100%;
+    height: 100%;
+}
+
+.anuncio a .img-container {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.anuncio a .img-container img {
+    background-position: center;
+    position: absolute;
+    width: auto;
+    height: 100%;
+    transition: transform ease 500ms;
+}
+
+.anuncios .anuncio:hover a .img-container img {
+    transform: scale(1.05);
+}
+
+.anuncio a .conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    height: 100%;
+    padding: 14px;
+}
+
+.conteudo .conteudo-topo {
+    display: flex;
+    justify-content: space-between;
+    height: 88%;
+}
+
+.conteudo .conteudo-topo .detalhes {
+    position: relative;
+    width: fit-content;
+    height: 100%;
+}
+
+.conteudo-topo .detalhes h2 {
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 12pt;
+    font-weight: 400;
+}
+
+.conteudo-topo .detalhes .preco-tela-pequena {
+    opacity: 0;
+    height: 12px;
+}
+
+.conteudo-topo .detalhes .insignias {
+    height: fit-content;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 8px;
+    gap: 8px;
+    list-style: none;
+}
+
+.detalhes .insignias .insignia {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 9pt;
+    font-weight: 500;
+    background-color: #e1f9ff;
+    color: #14596b;
+}
+
+.insignias .insignia .descricao {
+    margin-left: 0;
+}
+
+.conteudo .conteudo-topo .preco {
+    width: fit-content;
+    text-align: right;
+}
+
+.conteudo-topo .preco .preco-original {
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 10pt;
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+.conteudo-topo .preco .preco-atual,
+.conteudo-topo .detalhes .preco-tela-pequena {
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.conteudo-topo .preco .preco-parcelado {
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+}
+
+.conteudo .conteudo-inferior {
+    display: flex;
+    justify-content: space-between;
+    height: 12%;
+}
+
+.conteudo .conteudo-inferior .detalhes {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.conteudo-inferior .detalhes * {
+    display: flex;
+    justify-content: center;
+    line-height: 14pt;
+    align-items: center;
+    height: 100%;
+    font-size: 10pt;
+    color: #555;
+    margin: 0;
+}
+
+.conteudo-inferior .detalhes i {
+    font-size: 14pt;
+    margin-right: 6px;
+}
+
+.conteudo-inferior .fav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20pt;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .navbox .categorias .categoria {
+        width: 70px;
+        height: 50px;
+    }
+
+    .categorias .categoria span {
+        line-height: 10px;
+        font-size: 8pt;
+    }
+}
+
+@media (max-width: 868px) {
+    main {
+        position: relative;
+        flex-direction: column;
+    }
+
+    .navbox {
+        width: calc(100% + 40px);
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        background-color: #fff;
+        margin: -20px 0 0 -20px;
+        top: 82px;
+        padding-bottom: 10px;
+    }
+
+    .navbox h2 {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+
+    .navbox .categorias {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .anuncios {
+        width: 100%;
+    }
+}
+
+@media (max-width: 625px) {
+    .conteudo-topo .detalhes .preco-tela-pequena {
+        font-size: 14pt;
+        height: fit-content;
+        opacity: 1;
+        margin: 6px 0;
+    }
+
+    .conteudo .detalhes .insignias {
+        position: absolute;
+        bottom: 0;
+        align-items: end;
+        padding: 20px 0;
+    }
+
+    .detalhes .insignias .insignia {
+        width: 28px;
+        aspect-ratio: 1;
+    }
+
+    .insignias .insignia span,
+    .preco {
+        display: none;
+    }
+
+    .conteudo-inferior .detalhes * {
+        line-height: 14px;
+        font-size: 8pt;
+    }
+}

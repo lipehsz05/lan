@@ -1,0 +1,21 @@
+# Ativa a reescrita de URLs
+
+RewriteEngine On
+
+# Redireciona de HTTP para HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove a extensão .html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)$ $1.html [L]
+
+# Remove a extensão .php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)$ $1.php [L]
+
+# Redireciona todas as requisições para a pasta ProjetoLAN
+RewriteCond %{REQUEST_URI} !^/ProjetoLAN/
+RewriteRule ^(.*)$ /ProjetoLAN/$1 [L]
+
+

@@ -1,0 +1,330 @@
+/* 
+    Menu:
+    CSS do Menu de Navegação 
+    CSS do Formulário    
+    CSS do Campo de Categórias
+    CSS do Dropbox
+    CSS do Rodapé
+*/
+
+:root {
+    --primaria: #4d5ce3;
+    --secundaria: #de8e2b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #222;
+    font-family: Roboto, sans-serif;
+}
+
+/* CSS do Menu de Navegação */
+
+nav {
+    width: 100%;
+    height: 250px;
+    background-color: var(--primaria);
+}
+
+nav .logo-container {
+    padding: 10px;
+    z-index: 2;
+    user-select: none;
+}
+
+nav .logo-container img {
+    filter: brightness(200%) contrast(500%) grayscale(100%);
+    /* filter: brightness(192%) contrast(125%) hue-rotate(161deg) saturate(120%); */
+}
+
+/* CSS do Formulário */
+
+form {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ddd;
+    width: fit-content;
+    height: fit-content;
+    min-width: 80%;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 26px 46px;
+    padding-top: 60px;
+}
+
+form section {
+    flex: 50%;
+    min-width: 410px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form section input,
+form section textarea,
+form section button,
+form section fieldset,
+form section .dropbox {
+    background-color: #fff;
+    border: none;
+    width: 70%;
+    height: 60px;
+    border-radius: 16px;
+    padding: 12px;
+    resize: none;
+    font-size: 12pt;
+}
+
+form section h2,
+form section h3 {
+    text-align: center;
+    width: 70%;
+    color: #999;
+    height: fit-content;
+    gap: 0;
+    margin-top: -12px;
+}
+
+form section h2 {
+    font-size: 22pt;
+    margin-top: 0;
+}
+
+/* CSS do Campo de Categórias */
+
+form section fieldset {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    padding: 22px;
+    padding-top: 50px;
+    accent-color: #d87e27;
+}
+
+fieldset legend {
+    position: absolute;
+    top: 20px;
+}
+
+fieldset .direita,
+fieldset .esquerda {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    color-scheme: light;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 12px;
+}
+
+.option * {
+    cursor: pointer;
+}
+
+.option input {
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.option input::selection {
+    background-color: var(--secundaria);
+}
+
+form section textarea {
+    height: 300px;
+}
+
+/* CSS do Dropbox */
+
+.dropbox-container {
+    width: 70%;
+    display: flex;
+}
+
+.dropbox-container .dropbox {
+    border: 2px dashed #999;
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.dropbox i {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+    color: #ccc;
+}
+
+.dropbox h4 {
+    text-align: center;
+    color: #999;
+    font-weight: 500;
+}
+
+.dropbox h4 b {
+    color: #999;
+    font-weight: 750;
+}
+
+.dropbox-container ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 300px);
+    height: 200px;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+.dropbox-container ul li {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #999;
+    padding: 8px;
+    box-shadow: 0 5px 5px #999;
+    overflow: hidden;
+}
+
+.dropbox-container ul li i {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    color: var(--primaria);
+    font-size: 30pt;
+    text-align: center;
+    cursor: pointer;
+}
+
+form section p {
+    width: 300px;
+}
+
+.texto-destacado,
+.texto-destacado:visited {
+    color: var(--secundaria);
+    cursor: pointer;
+}
+
+.texto-destacado:hover {
+    color: var(--primaria);
+    text-decoration: underline;
+}
+
+form section button {
+    background-color: var(--primaria);
+    color: #fff;
+    font-size: 16pt;
+    border: none;
+    cursor: pointer;
+}
+
+/* CSS do Rodapé */
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 26px;
+}
+
+footer .sobre-nos {
+    display: flex;
+    align-items: center;
+}
+
+footer .sobre-nos span {
+    font-size: 22pt;
+    margin-right: 10px;
+}
+
+footer .redes-sociais {
+    text-align: right;
+    font-size: 32pt;
+}
+
+footer .redes-sociais a {
+    cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+    form section input,
+    form section textarea,
+    form section button,
+    form section fieldset,
+    form section h2,
+    form section h3,
+    form section p,
+    form section .dropbox-container {
+        width: 90%;
+    }
+
+    .dropbox-container {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .dropbox-container .dropbox {
+        width: 100%;
+    }
+
+    .dropbox-container ul {
+        padding: 0;
+        padding-top: 20px;
+        width: 100%;
+        height: fit-content;
+    }
+}
+
+@media (max-width: 1139px) {
+    form section input,
+    form section textarea,
+    form section button,
+    form section fieldset,
+    form section h2,
+    form section h3,
+    form section p,
+    form section .dropbox-container {
+        width: 100%;
+    }
+
+    form section h2 {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    form section {
+        flex: 100%;
+        min-width: 0;
+    }
+
+    form section fieldset {
+        flex-direction: column;
+        min-width: 0;
+        height: fit-content;
+    }
+}
